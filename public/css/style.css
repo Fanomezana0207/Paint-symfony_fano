@@ -1,0 +1,236 @@
+:root {
+  --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-primary: "Inter", sans-serif;
+  --font-secondary: "Cardo", sans-serif;
+  --blue: rgb(0, 0, 114);
+}
+
+.header {
+    transition: all 0.5s;
+    z-index: 997;
+    height: 100px;
+  }
+  
+  .header .logo {
+    transition: 0.3s;
+  }
+  
+  .header .logo img {
+    height: 28px;
+    margin-right: 8px;
+  }
+  
+  .navbar .dropdown ul,
+  .navbar .dropdown .dropdown ul{
+    box-shadow: 0 1.5rem 4rem rgba(22,28,45,.15);
+  }
+
+  .btn:hover{
+      transform: translateY(-5px);
+      box-shadow: 2px 5px 8px 2px rgba(0,0,0,.4);
+  }
+  .mt-100{
+    margin-top: 100px;
+  }
+  footer{
+    background-color: var(--blue);
+  }
+  .container-footer .thead{
+    color: #a8a8a8;
+  }
+  .container-footer a{
+    line-height: 2;
+  }
+  .container-footer a,
+  .container-footer p{
+    color: var(--bs-secondary);
+    text-decoration: none;
+  }
+  .container-footer>div{
+    padding: 0 1rem;
+    max-width: 15rem;
+    min-width: 12rem;
+  }
+  .container-section1{
+    text-align: center;
+    width: fit-content;
+    margin: 10rem 0;
+  }
+  .section1{
+    background-size: cover;
+    background-position: 30%;
+  }
+
+  @media (min-width: 1280px) {
+    .navbar {
+      padding: 0;
+    }
+  
+    .navbar ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      list-style: none;
+      align-items: center;
+    }
+  
+    .navbar li {
+      position: relative;
+    }
+  
+    .navbar a,
+    .navbar a:focus {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 30px;
+      font-family: var(--font-primary);
+      text-decoration: none;
+      letter-spacing: 1px;
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--bs-link-color);
+      white-space: nowrap;
+      transition: 0.3s;
+    }
+  
+    .navbar a i,
+    .navbar a:focus i {
+      font-size: 15px;
+      line-height: 0;
+      margin-left: 5px;
+    }
+  
+    .navbar a:hover,
+    .navbar .active,
+    .navbar .active:focus,
+    .navbar li:hover>a {
+      color: var(--blue);
+    }
+  
+    .navbar .dropdown ul {
+      display: block;
+      position: absolute;
+      left: 14px;
+      top: calc(100% + 30px);
+      margin: 0;
+      padding: 10px 0;
+      z-index: 99;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s;
+      border-radius: 4px;
+    }
+  
+    .navbar .dropdown ul li {
+      min-width: 200px;
+    }
+  
+    .navbar .dropdown ul a {
+      padding: 10px 20px;
+      font-size: 16px;
+      text-transform: none;
+      font-weight: 400;
+    }
+    .navbar .dropdown ul a:hover,
+    .navbar .dropdown ul .active:hover,
+    .navbar .dropdown ul li:hover>a {
+        color: var(--blue);
+    }
+
+    .navbar .dropdown:hover>ul {
+        opacity: 1;
+        top: 100%;
+        visibility: visible;
+    }
+
+    .navbar .dropdown .dropdown ul {
+        top: 0;
+        left: calc(100% - 30px);
+        visibility: hidden;
+    }
+
+    .navbar .dropdown .dropdown:hover>ul {
+        opacity: 1;
+        top: 0;
+        left: 100%;
+        visibility: visible;
+    }
+  }
+
+  @media (min-width: 1280px) and (max-width: 1366px) {
+    .navbar .dropdown .dropdown ul {
+      left: -90%;
+    }
+  
+    .navbar .dropdown .dropdown:hover>ul {
+      left: -100%;
+    }
+  }
+
+  @media (max-width: 1279px) {
+    .navbar {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      max-width: 400px;
+      bottom: 0;
+      transition: 0.3s;
+      z-index: 9997;
+    }
+  
+    .navbar ul {
+      position: absolute;
+      inset: 0;
+      padding: 50px 0 10px 0;
+      margin: 0;
+      overflow-y: auto;
+      transition: 0.3s;
+      z-index: 9998;
+    }
+  
+    .navbar a,
+    .navbar a:focus {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      font-family: var(--font-primary);
+      font-size: 16px;
+      text-transform: uppercase;
+      font-weight: 400;
+      color: var(--blue);
+      letter-spacing: 1px;
+      white-space: nowrap;
+      transition: 0.3s;
+    }
+  
+    .navbar a i,
+    .navbar a:focus i {
+      font-size: 15px;
+      line-height: 0;
+      margin-left: 5px;
+    }
+  
+    .navbar a:hover,
+    .navbar .active,
+    .navbar .active:focus,
+    .navbar li:hover>a {
+      color: var(--blue);
+    }
+  
+    .navbar .dropdown ul,
+    .navbar .dropdown .dropdown ul {
+      position: static;
+      display: none;
+      padding: 10px 0;
+      margin: 10px 20px;
+      transition: all 0.5s ease-in-out;
+    }
+  
+    .navbar .dropdown>.dropdown-active,
+    .navbar .dropdown .dropdown>.dropdown-active {
+      display: block;
+    }
+}
